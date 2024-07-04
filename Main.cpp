@@ -4,6 +4,7 @@ using namespace std;
 int main(){
 
 int modo;
+string jugador1, jugador2;
 
 cout << "BIENVENIDO A PIEDRA, PAPEL, O TIJERA" << endl;
 cout << " Selecciona una de las opciones" << endl;
@@ -17,6 +18,13 @@ switch (modo)
 {
 case 1: 
  cout << "Modo Jugador contra máquina seleccionado." << endl;
+    
+    // Inscripción de jugadores
+    cout << "Ingrese el nombre del Jugador 1: ";
+    cin >> jugador1;
+    cout << "Ingrese el nombre del Jugador 2: ";
+    cin >> jugador2;
+
 break;
 
 case 2:
