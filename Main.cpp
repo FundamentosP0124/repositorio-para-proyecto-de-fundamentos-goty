@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 int main(){
@@ -17,6 +18,11 @@ cin >> modo;
 switch (modo)
 {
 case 1: 
+  int computadora;
+    int numero;
+    int contador;
+    int intentos;
+
  cout << "Modo Jugador contra máquina seleccionado." << endl;
     
     // Inscripción de jugadores
@@ -24,6 +30,37 @@ case 1:
     cin >> jugador1;
     cout << "Ingrese el nombre del Jugador 2: ";
     cin >> jugador2;
+do{
+    cout << " JUEGO DE PIERDA, PAPEL O TIJERA" << endl << "Jugador vs CPU" << endl ;
+    cout << " Seleccione una de las opciones" << endl ;
+    cout << "1. Piedra" << endl << "2. Papel" << endl << "3. Tijera" << endl;
+    cin >> numero ;
+    cout << endl ;
+
+    computadora = rand() % 3 + 1 ;
+
+  cout <<  "La maquina elige: " << computadora << endl ;
+
+    
+   /* int piedra, papel, tijera ;
+    int puntosf = 0 , puntosc = 0 , empate = 0 */
+
+
+     if (numero == computadora){
+    cout << "Empate" ;
+}
+        else if ((numero == 1 && computadora == 3) ||
+                 (numero == 2 && computadora == 1) ||
+                 (numero == 3 && computadora == 2))
+    {
+        cout  << "Ganaste" ;
+    }  else {
+            cout << "Perdiste" ;
+    }
+
+contador++;
+
+} while (intentos < 3) ;
 
 break;
 
