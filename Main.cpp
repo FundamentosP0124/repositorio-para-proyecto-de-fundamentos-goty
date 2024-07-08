@@ -47,15 +47,15 @@ do{
 
 
      if (numero == computadora){
-    cout << "Empate" ;
+    cout << "Empate" << endl ;
 }
         else if ((numero == 1 && computadora == 3) ||
                  (numero == 2 && computadora == 1) ||
                  (numero == 3 && computadora == 2))
     {
-        cout  << "Ganaste" ;
+        cout  << "Ganaste" << endl ;
     }  else {
-            cout << "Perdiste" ;
+            cout << "Perdiste" << endl ;
     }
 
 contador++;
