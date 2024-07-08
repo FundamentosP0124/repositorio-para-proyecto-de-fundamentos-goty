@@ -13,7 +13,8 @@ cout << " Selecciona una de las opciones" << endl;
 cout << " 1. Jugador contra maquina" << endl;
 cout << " 2. Jugador contra Jugador" << endl;
 cout << " 3. Como se juega?" << endl;
-cout << " 4. Salir " << endl;
+cout << " 4. Desarrolladores " << endl;
+cout << " 5. Salir" << endl;
 cin >> modo;
 
 switch (modo)
@@ -27,10 +28,9 @@ case 1:
  cout << "Modo Jugador contra máquina seleccionado." << endl;
     
     // Inscripción de jugadores
-    cout << "Ingrese el nombre del Jugador 1: ";
+    cout << "Ingresa tu nombre ";
     cin >> jugador1;
-    cout << "Ingrese el nombre del Jugador 2: ";
-    cin >> jugador2;
+    
 do{
     cout << " JUEGO DE PIERDA, PAPEL O TIJERA" << endl << "Jugador vs CPU" << endl ;
     cout << " Seleccione una de las opciones" << endl ;
@@ -74,19 +74,19 @@ case 2: {
     string player1, player2;
 cout << "Modo jugador contra jugador seleccionado" << endl << endl;
 
-            cout << "En el juego, el arma de cada jugador puede ser una de las 3:" << endl;
+            cout << "Deberas escoger una de las siguientes opciones " << endl;
             cout << "1. Piedra" << endl;
             cout << "2. Papel" << endl;
             cout << "3. Tijera" << endl << endl;
 
             cout << "Jugador 1, ingresa tu nombre: ";
             cin >> player1;
-            cout << "Jugador 1, escoge tu arma segun su numero: ";
+            cout << player1 << " escoge tu arma segun su numero: ";
             cin >> decision1;
 
             cout << "Jugador 2, ingresa tu nombre: ";
             cin >> player2;
-            cout << "Jugador 2, escoge tu arma segun su numero: ";
+            cout << player2 << " escoge tu arma segun su numero: ";
             cin >> decision2;
 
             ganador(decision1, decision2, player1, player2);
@@ -100,7 +100,17 @@ cout << "- La tijera corta el papel." << endl;
 cout << "- El papel envuelve la piedra." << endl;
 cout << "- En caso de empate (que dos jugadores elijan el mismo elemento), se juega otra vez." << endl;
 
+cout << "Opcion 1 es una opcion para quienes quieran jugador individualmente contra la maquina" << endl;
+cout << "Opcion 2 es para quienes quieren divertirse junto a un amigo" << endl;
+
 case 4:
+cout << "Este juego hecho por 3 grandes desarrollares" << endl;
+cout << "Edwin Gerardo Alvarez Barrientos - 00078724 - Sección 01" << endl;
+cout << "Cesia Geovanna Torres Escobar - 00154423 - Seccion 03" << endl;
+cout << "Juan Pablo Valladares Ventura - 00198724 - sección 02" << endl;
+            return 0;
+break;
+case 5:
 cout << "Gracias por jugar. ¡Adiós!" << endl;
             return 0;
 break;
