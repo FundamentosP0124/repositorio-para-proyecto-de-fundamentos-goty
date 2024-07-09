@@ -15,7 +15,7 @@ int main() {
         case 2:
             cout << "Modo jugador contra jugador seleccionado" << endl << endl;
 
-            cout << "En el juego, el arma de cada jugador puede ser una de las 3:" << endl;
+            cout << "En el juego, cada jugador puede escoger uno de los tres movimientos:" << endl;
             cout << "1. Piedra" << endl;
             cout << "2. Papel" << endl;
             cout << "3. Tijera" << endl << endl;
