@@ -1,7 +1,11 @@
 #include <iostream>
+#include <fstream>
+#include <string.h>
+#include <cstring>
 using namespace std;
 
 int main() {
+
     int modo;
     string jugador1, jugador2;
 
@@ -45,4 +49,11 @@ int main() {
     }
 
             return 0;
+}
+void registro(string texto) {
+    string nombreArchivo = "registro_juego.txt";
+    ofstream archivo;
+    archivo.open(nombreArchivo.c_str(), fstream::app);
+    archivo << texto << endl;
+    archivo.close();
 }
