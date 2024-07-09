@@ -1,21 +1,40 @@
 #include <iostream>
-#include <string>
 #include <cstdlib>
+#include <string>
 #include <fstream>
+
 using namespace std;
 
-void ganador(int decision1, int decision2, string jugador1, string jugador2);
+void registro(string texto) {
+    string nombreArchivo = "registro_juego.txt";
+    ofstream archivo;
+    archivo.open(nombreArchivo.c_str(), fstream::app);
+    archivo << texto << endl;
+    archivo.close();
+}
+
+void ganador(int decision1, int decision2, string player1, string player2) {
+    if (decision1 == decision2) {
+        cout << "Es un empate" << endl;
+        registro("Empate entre " + player1 + " y " + player2);
+    } else if ((decision1 == 1 && decision2 == 3) ||
+               (decision1 == 3 && decision2 == 2) ||
+               (decision1 == 2 && decision2 == 1)) {
+        cout << player1 << " gana!" << endl;
+        registro(player1 + " gana contra " + player2);
+    } else if ((decision2 == 1 && decision1 == 3) ||
+               (decision2 == 3 && decision1 == 2) ||
+               (decision2 == 2 && decision1 == 1)) {
+        cout << player2 << " gana!" << endl;
+        registro(player2 + " gana contra " + player1);
+    } else {
+        cout << "Decisión no válida" << endl;
+    }
+}
 
 int main() {
     int modo;
-    int decision1 = 0;
-    int decision2 = 0;
-    int computadora;
-    int numero;
-    int contador;
-    int intentos;
     string jugador1, jugador2;
-
 
     cout << "BIENVENIDO A PIEDRA, PAPEL, O TIJERA" << endl;
     cout << " Selecciona una de las opciones" << endl;
@@ -25,14 +44,24 @@ int main() {
     cout << " 4. Desarrolladores " << endl;
     cout << " 5. Salir" << endl;
     cin >> modo;
- 
- switch (modo) {
-        case 1: 
-         
-    cout << " JUEGO DE PIERDA, PAPEL O TIJERA" << endl;
-    //En la parte del registro se deifine "jugador1" //
+
+    switch (modo) {
+        case 1: {
+            int computadora;
+            int numero;
+            int contador = 0;
+            const int intentos = 3;
+
+            cout << "Modo Jugador contra máquina seleccionado." << endl;
+
+            // Inscripción de jugadores
+            cout << "Ingresa tu nombre: ";
+            cin >> jugador1;
+            registro("Jugador vs CPU: " + jugador1);
+
             do {
-                cout << jugador1 << " porfavor selecciona una de las opciones para vencer a la maquina" << endl;
+                cout << "JUEGO DE PIEDRA, PAPEL O TIJERA" << endl << "Jugador vs CPU" << endl << "Tienes 3 intentos para vencer a la maquina!" << endl;
+                cout << " Seleccione una de las opciones" << endl;
                 cout << "1. Piedra" << endl << "2. Papel" << endl << "3. Tijera" << endl;
                 cin >> numero;
                 cout << endl;
@@ -42,51 +71,48 @@ int main() {
 
                 if (numero == computadora) {
                     cout << "Empate" << endl;
-                  //Se guarda en el registro final //
-                    registro(jugador1 + " vrs CPU: Empate");
+                    registro(jugador1 + " vs CPU: Empate");
                 } else if ((numero == 1 && computadora == 3) ||
                            (numero == 2 && computadora == 1) ||
                            (numero == 3 && computadora == 2)) {
-                    cout << "Ganaste!" << endl;
+                    cout << "Ganaste" << endl;
                     registro(jugador1 + " vs CPU: Ganaste");
                 } else {
-                    cout << "Perdiste!" << endl;
+                    cout << "Perdiste" << endl;
                     registro(jugador1 + " vs CPU: Perdiste");
                 }
 
                 contador++;
             } while (contador < intentos);
 
+            break;
+        }
+        case 2: {
+            cout << "Modo Jugador contra Jugador seleccionado." << endl;
+            int decision1 = 0;
+            int decision2 = 0;
+            string player1, player2;
 
-    return 0;
-           
-        case 2:  
-           cout << "Modo jugador contra jugador seleccionado." << endl << endl;
-
-            cout << "En el juego, cada jugador puede escoger uno de los tres movimientos:" << endl;
+            cout << "Deberas escoger una de las siguientes opciones " << endl;
             cout << "1. Piedra" << endl;
             cout << "2. Papel" << endl;
             cout << "3. Tijera" << endl << endl;
 
             cout << "Jugador 1, ingresa tu nombre: ";
-            cin >> jugador1;
-            cout << "Jugador 1, escoge tu arma segun su numero: ";
+            cin >> player1;
+            cout << player1 << " escoge tu arma segun su numero: ";
             cin >> decision1;
 
             cout << "Jugador 2, ingresa tu nombre: ";
-            cin >> jugador2;
-            cout << "Jugador 2, escoge tu arma segun su numero: ";
+            cin >> player2;
+            cout << player2 << " escoge tu arma segun su numero: ";
             cin >> decision2;
 
-            ganador(decision1, decision2, jugador1, jugador2);
-            break;
-           
-           return 0;
-    }
-            
-           
-    
+            registro("Jugador vs Jugador: " + player1 + " vs " + player2);
+            ganador(decision1, decision2, player1, player2);
 
+            break;
+        }
         case 3:
             cout << "El objetivo es vencer al oponente seleccionando el arma que gana, según las siguientes reglas:" << endl;
             cout << "- La piedra aplasta la tijera." << endl;
@@ -109,25 +135,5 @@ int main() {
             cout << "Opcion no valida, por favor selecciona una opcion del 1 al 5" << endl;
     }
 
-            return 0;
-
-
-     
-     void ganador(int decision1, int decision2, string jugador1, string jugador2) {
-    if (decision1 == decision2) {
-        cout << "Es un empate" << endl;
-    } else if ((decision1 == 1 && decision2 == 3) ||
-               (decision1 == 3 && decision2 == 2) ||
-               (decision1 == 2 && decision2 == 1)) {
-        cout << jugador1 << " gana!" << endl;
-    } else if ((decision2 == 1 && decision1 == 3) ||
-               (decision2 == 3 && decision1 == 2) ||
-               (decision2 == 2 && decision1 == 1)) {
-        cout << jugador2 << " gana!" << endl;
-    } else {
-        cout << "Decisión no válida" << endl;
-    }
-
-     }
-     
-     
+    return 0;
+}
