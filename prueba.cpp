@@ -20,7 +20,7 @@ int main(){
                 cin >> numero;
                 cout << endl;
 
-                computadora = rand() % 4 + 1;
+                computadora = rand() % 3 + 1;
                 cout << "La maquina elige: " << computadora << endl;
 
                 if (numero == computadora) {
