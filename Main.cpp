@@ -29,10 +29,10 @@ int main() {
  switch (modo) {
         case 1: 
          
-    cout << " JUEGO DE PIERDA, PAPEL O TIJERA" << endl;
+    cout << " JUEGO DE PIEDRA, PAPEL O TIJERA" << endl;
     //En la parte del registro se deifine "jugador1" //
             do {
-                cout << jugador1 << " porfavor selecciona una de las opciones para vencer a la maquina" << endl;
+                cout << jugador1 << " Porfavor selecciona una de las opciones para vencer a la maquina" << endl;
                 cout << "1. Piedra" << endl << "2. Papel" << endl << "3. Tijera" << endl;
                 cin >> numero;
                 cout << endl;
