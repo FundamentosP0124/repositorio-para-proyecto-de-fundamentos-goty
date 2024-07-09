@@ -38,7 +38,7 @@ int main(){
                 }
 
                 contador++;
-            } while (contador < intentos);
+            } while (contador < 3);
 
 
     return 0;
