@@ -13,7 +13,7 @@ int main() {
 
     switch(modo) {
         case 2:
-            cout << "Modo jugador contra jugador seleccionado" << endl << endl;
+            cout << "Modo jugador contra jugador seleccionado." << endl << endl;
 
             cout << "En el juego, cada jugador puede escoger uno de los tres movimientos:" << endl;
             cout << "1. Piedra" << endl;
