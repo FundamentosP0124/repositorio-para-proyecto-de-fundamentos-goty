@@ -10,8 +10,6 @@ int main() {
     int decision2 = 0;
     string jugador1, jugador2;
 
-    cout << "Escribe 2" << endl;
-    cin >> modo;
 
     switch(modo) {
         case 2:
