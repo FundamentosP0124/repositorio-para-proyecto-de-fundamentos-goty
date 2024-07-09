@@ -26,7 +26,7 @@ int main(){
                 if (numero == computadora) {
                     cout << "Empate" << endl;
                   //Se guarda en el registro final //
-                    registro(jugador1 + " vs CPU: Empate");
+                    registro(jugador1 + " vrs CPU: Empate");
                 } else if ((numero == 1 && computadora == 3) ||
                            (numero == 2 && computadora == 1) ||
                            (numero == 3 && computadora == 2)) {
