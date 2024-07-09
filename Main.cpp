@@ -56,9 +56,6 @@ int main() {
 
                 contador++;
             } while (contador < intentos);
-
-
-    return 0;
            
         case 2:  
            cout << "Modo jugador contra jugador seleccionado." << endl << endl;
@@ -82,11 +79,8 @@ int main() {
             break;
            
            return 0;
-    }
-            
-           
     
-
+            
         case 3:
             cout << "El objetivo es vencer al oponente seleccionando el arma que gana, según las siguientes reglas:" << endl;
             cout << "- La piedra aplasta la tijera." << endl;
@@ -113,7 +107,7 @@ int main() {
 
 
      
-     void ganador(int decision1, int decision2, string jugador1, string jugador2) {
+     void ganador(int decision1, int decision2, string jugador1, string jugador2); {
     if (decision1 == decision2) {
         cout << "Es un empate" << endl;
     } else if ((decision1 == 1 && decision2 == 3) ||
@@ -129,5 +123,6 @@ int main() {
     }
 
      }
+     
      
      
